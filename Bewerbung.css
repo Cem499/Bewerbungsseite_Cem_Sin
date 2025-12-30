@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(270deg, rgb(198, 228, 238), rgb(241, 235, 235), rgb(198, 228, 238));
+  background-size: 500% 500%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.weisses-feld{
+    width: min(980px, 100%);
+    height: auto;
+    border-radius: 28px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+    padding: 34px;
+    margin: 0 auto;
+    background-color: rgba(241, 235, 235, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    position: relative;
+    isolation: isolate;
+  animation: cardIn 520ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.weisses-feld::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  z-index: -1;
+  background: radial-gradient(900px 450px at 20% 0%, rgba(198, 228, 238, 0.85), rgba(198, 228, 238, 0)),
+              radial-gradient(700px 400px at 90% 10%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+  filter: blur(14px);
+  opacity: 0.95;
+}
+
+.Beschreibung{
+  color: rgba(15, 23, 42, 0.72);
+  margin-top: 14px;
+
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 3.4vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 10px 0 0 0;
+  color: rgba(15, 23, 42, 0.72);
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
+.Beschreibung p {
+  margin: 10px 0 0 0;
+
+}
+.button-bereich a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: linear-gradient(180deg, rgb(210, 238, 246), rgb(198, 228, 238));
+  font-size: 18px;
+  font-weight: 650;
+  border-radius: 14px;
+  margin: 0;
+  padding: 12px 14px;
+  color: #0f172a;
+  text-decoration: none;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+
+.button-bereich a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+  filter: saturate(1.03);
+}
+
+.button-bereich a:active {
+  transform: translateY(0px);
+  filter: saturate(1.02);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.14);
+}
+
+.button-bereich a:focus-visible {
+  outline: 3px solid rgba(15, 23, 42, 0.22);
+  outline-offset: 3px;
+}
+
+.profilbild{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 0 auto;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  cursor: pointer; 
+}
+
+
+.kopfbereich {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.kopfinhalt {
+  flex: 1;
+}
+
+
+
+.button-und-kontakt {
+  display: flex;
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.button-bereich {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kontakt-bereich {
+  flex: 1;
+  background: linear-gradient(180deg, rgb(210, 238, 246), rgb(198, 228, 238));
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+  font-size: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  align-self: flex-start;
+}
+
+.kontakt-bereich h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.kontakt-bereich p {
+  margin: 0 0 10px 0;
+  color: rgba(15, 23, 42, 0.85);
+}
+
+.kontakt-bereich a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.22);
+}
+
+.kontakt-bereich a:hover {
+  border-bottom-color: rgba(15, 23, 42, 0.45);
+}
+
+.kontakt-bereich a:focus-visible {
+  outline: 3px solid rgba(15, 23, 42, 0.22);
+  outline-offset: 3px;
+  border-bottom-color: transparent;
+}
+
+.kontakt-bereich p:last-child {
+  margin-bottom: 0;
+}
+
+#bild-overlay {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px) saturate(0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+
+#bild-overlay[hidden] {
+  display: none;
+}
+
+#bild-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#bild-overlay .grossbild {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #222;
+  transform: translateY(10px) scale(0.96);
+  opacity: 0.92;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+#bild-overlay.is-open .grossbild {
+  transform: translateY(0px) scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 820px) {
+  body {
+    padding: 18px;
+  }
+
+  .weisses-feld {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .kopfbereich {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .profilbild {
+    margin: 0;
+    width: 160px;
+    height: 160px;
+  }
+
+  .button-und-kontakt {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  .weisses-feld {
+    animation: none;
+  }
+
+  .button-bereich a {
+    transition: none;
+  }
+
+  #bild-overlay {
+    transition: none;
+  }
+
+  #bild-overlay .grossbild {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
